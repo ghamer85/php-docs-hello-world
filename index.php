@@ -1,4 +1,6 @@
 <?php
+phpinfo();
+/*
 $servername = "tlportal.mariadb.database.azure.com";
 $username = "portadmin@tlportal";
 $password = "RmPRevfFAJyS!3:";
@@ -40,6 +42,6 @@ $conn->close();
 
 } catch(Exeption $error) {
     echo $error;
-}
+}*/
 ?>
 
