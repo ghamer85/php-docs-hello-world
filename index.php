@@ -10,12 +10,13 @@ $dbname = "thatsliving";
 $userInputSeries = "CLA-017-061"; // Replace this with the actual user input
 
 // Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = new mysqli($servername, $username, $password, $dbname) or die("dead");
 
 // Check connection
-if ($conn->connect_error) {
+/*if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
-}
+}*/
+echo $conn;
 echo "Connected successfully";
 /*
 try {
