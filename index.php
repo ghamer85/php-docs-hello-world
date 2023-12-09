@@ -16,6 +16,9 @@ if ($conn->connect_error) {
 }
 echo "Connected successfully";
 
+try {
+
+
 // Prepare and bind
 $stmt = $conn->prepare("SELECT name FROM items WHERE series = ?");
 $stmt->bind_param("s", $userInputSeries);
@@ -34,5 +37,9 @@ while ($stmt->fetch()) {
 // Close statement and connection
 $stmt->close();
 $conn->close();
+
+} catch(Exeption $error) {
+    echo $error;
+}
 ?>
 
