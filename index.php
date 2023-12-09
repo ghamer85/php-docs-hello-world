@@ -6,11 +6,11 @@ $username = "portadmin@tlportal";
 $password = "RmPRevfFAJyS!3:";
 $dbname = "thatsliving";
 
-// User input for series search
-$userInputSeries = "CLA-017-061"; // Replace this with the actual user input
+
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname) or die("dead");
+
 
 // Check connection
 /*if ($conn->connect_error) {
