@@ -54,7 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <?php if (!empty($results)): ?>
         <h2>Search Results:</h2>
         <?php foreach ($results as $row): ?>
-            <p>Item: <?php echo $row['item_name']; // Replace 'item_name' with your actual column name ?></p>
+            <p>Item: <?php echo $row['name']; // Replace 'item_name' with your actual column name ?></p>
         <?php endforeach; ?>
     <?php elseif ($_SERVER["REQUEST_METHOD"] == "POST"): ?>
         <p>No items found.</p>
