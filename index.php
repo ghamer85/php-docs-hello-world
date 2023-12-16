@@ -27,8 +27,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     try {
         // Prepare a SQL query to search for the SKU in the 'items' table
-        $stmt = $conn->prepare("SELECT * FROM items WHERE series LIKE ?");
-        $searchTerm = "%$sku%";
+        $stmt = $conn->prepare("SELECT * FROM items WHERE series = ?");
+        $searchTerm = "$sku";
         $stmt->execute([$searchTerm]);
 
         // Fetch the results
