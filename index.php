@@ -1,49 +1,25 @@
 <?php
-//phpinfo();
-
-$servername = "tlportal.mariadb.database.azure.com";
-$username = "portadmin@tlportal";
-$password = "RmPRevfFAJyS!3:";
-$dbname = "thatsliving";
-
-
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname) or die("dead");
-
-
-// Check connection
-/*if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}*/
-echo $conn;
-echo "Connected successfully";
+// Use environment variables or a configuration file to store credentials
+$servername = getenv('DB_SERVER') ?: "tlportal.mariadb.database.azure.com";
+$username = getenv('DB_USERNAME') ?: "portadmin@tlportal";
+$password = getenv('DB_PASSWORD') ?: "RmPRevfFAJyS!3:";
+$dbname = getenv('DB_NAME') ?: "thatsliving";
 
 try {
+    // Create a PDO connection
+    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+    
+    // Set the PDO error mode to exception
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-/*
-// Prepare and bind
-$stmt = $conn->prepare("SELECT name FROM items WHERE series = ?");
-$stmt->bind_param("s", $userInputSeries);
+    echo "Connected successfully";
+} catch(PDOException $e) {
+    // Log error message to a file or a logging system
+    error_log("Connection failed: " . $e->getMessage());
 
-// Execute the query
-$stmt->execute();
-
-// Bind result variables
-$stmt->bind_result($name);
-
-// Fetch values
-while ($stmt->fetch()) {
-    echo "Name: " . $name . "<br>";
+    // Display a generic error message to the user
+    echo "Connection failed";
 }
-
-// Close statement and connection
-$stmt->close();
-$conn->close();
-
-} catch(Exeption $error) {
-    echo $error;
-}
-*/
 ?>
+
 
