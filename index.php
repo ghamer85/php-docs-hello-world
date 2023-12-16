@@ -18,10 +18,10 @@ $conn = new mysqli($servername, $username, $password, $dbname) or die("dead");
 }*/
 echo $conn;
 echo "Connected successfully";
-/*
+
 try {
 
-
+/*
 // Prepare and bind
 $stmt = $conn->prepare("SELECT name FROM items WHERE series = ?");
 $stmt->bind_param("s", $userInputSeries);
@@ -44,5 +44,6 @@ $conn->close();
 } catch(Exeption $error) {
     echo $error;
 }
-?>*/
+*/
+?>
 
