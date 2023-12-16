@@ -57,7 +57,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <p>Item: <?php echo $row['name']; ?></p>
             <p>Dimension: <?php echo $row['dimension']; ?></p>
             <p>Dimension: <?php echo $row['dimension']; ?></p>
-            <p>Price: <?php echo $row['sale_rice']; ?></p>
+            <p>Price: <?php echo $row['sale_price']; ?></p>
         <?php endforeach; ?>
     <?php elseif ($_SERVER["REQUEST_METHOD"] == "POST"): ?>
         <p>No items found.</p>
